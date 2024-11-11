@@ -1,28 +1,19 @@
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
-import connectsqlserver.DatabaseConnector;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import model.admin.Admin;
 import model.admin.AdminDAO;
-import model.customer.Customer;
-import model.customer.CustomerDAO;
+import model.product.Product;
+import model.product.ProductDAO;
+
+import java.util.ArrayList;
 
 public class testCheckAccount {
     public static void main(String[] args) {
 
-       String username = "123";
-       String password = "123";
+        ArrayList<Product> products = (ArrayList<Product>) ProductDAO.getInstance().selectByConditions(null, "Confections", 5 , 30);
 
-       checkAccount(username, password);
+        for (Product product : products) {
+
+            System.out.println(product.toString());
+        }
 
 
 
