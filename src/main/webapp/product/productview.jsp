@@ -22,7 +22,7 @@
 <%--    <c:set var="category" value="${requestScope.categories}"/>--%>
     <label for="categoryName">Product Category: </label>
     <select name="categoryName" id="categoryName">
-        <option value="all" ${categoryName == 'all' ? 'selected' : ''}>All</option>
+        <option value="all" ${categoryName == 'all' ? 'selected' : ''} >All</option>
         <c:forEach var="category" items="${categories}">
             <option value="${category.categoryName}" ${category.categoryName == categoryName ? 'selected' : ''}>${category.categoryName}</option>
         </c:forEach>
